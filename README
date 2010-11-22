@@ -1,0 +1,7 @@
+JPA (JSON Partners Agenda) is an Android Application which shows, for a given
+JSON patter (HTTP GET) a list of partners of a generic company, with their
+details and the like.
+
+JPA is licensed under the Apache License, Version 2.0 
+
+JPA is written by Carlo Perassi <carlo@perassi.org>
