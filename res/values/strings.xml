@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">JPA</string>
+
+	<string name="btnCredits">Credits</string>
+	<string name="btnSettings">Settings</string>
+
+	<string name="btnBack">Back</string>
+
+	<string name="credits_hello">Credits (TODO).</string>
+
+	<!--
+		public String email; public String url; public String phone; public
+		String latitude; public String longitude;
+	-->
+
+	<string name="partner_name">%s (partner since %s)</string>
+	<string name="partner_percentage">Paid in: %s € (%s shares) %s%%</string>
+	<string name="partner_phone">%s</string>
+	<string name="partner_email">%s</string>
+	<string name="partner_url">%s</string>
+
+	<string name="settings_hello">Settings (TODO).</string>
+
+	<string name="tab_name_credits">Credits</string>
+	<string name="tab_name_find">Find</string>
+	<string name="tab_name_settings">Settings</string>
+</resources>
