@@ -16,6 +16,7 @@
 
 package com.jpa;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import android.content.Intent;
@@ -71,10 +72,12 @@ public class PartnerActivity extends MapActivity {
 		tv_name.setText(String.format(this.getString(R.string.partner_name),
 				name, appState.partners.get(pid).from));
 
+		double paid_in = Double.parseDouble(appState.partners.get(pid).paid_in);
+		DecimalFormat mf = new DecimalFormat("###.###.###");
 		TextView tv_percentage = (TextView) findViewById(R.id.partner_percentage);
 		tv_percentage.setText(String.format(this
-				.getString(R.string.partner_percentage), appState.partners
-				.get(pid).paid_in, appState.partners.get(pid).shares,
+				.getString(R.string.partner_percentage), mf.format(paid_in),
+				appState.partners.get(pid).shares,
 				appState.partners.get(pid).percentage));
 
 		TextView tv_phone = (TextView) findViewById(R.id.partner_phone);
