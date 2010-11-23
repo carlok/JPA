@@ -30,9 +30,7 @@ import android.widget.AdapterView.OnItemClickListener;
 /*
  * TODO: AsyncTask o Thread per la parte di calcolo (examineJSONFile)
  * TODO: l'annoso problema del filtro su di un ArrayAdapter opportuno
- * TODO: icona settings corretta
- * TODO: in examineJSONFile, rimuovere get e chiamata diretta all'array
- * TODO: tre campi "attivi" email, phone, url
+ * TODO: mappa
  */
 public class FindActivity extends ListActivity {
 	ListView lv;
@@ -58,9 +56,7 @@ public class FindActivity extends ListActivity {
 				JPAApplication appState = ((JPAApplication) getApplicationContext());
 				String[] selected = parent.getItemAtPosition(position)
 						.toString().split(" - ");
-				appState.pid = Integer.parseInt(selected[0]);
-				// Toast.makeText(getApplicationContext(), selected[0],
-				// Toast.LENGTH_SHORT).show();
+				appState.pid = Integer.parseInt(selected[0]) - 1;
 				Intent myIntent = new Intent(view.getContext(),
 						PartnerActivity.class);
 				startActivityForResult(myIntent, 0);
@@ -73,14 +69,14 @@ public class FindActivity extends ListActivity {
 
 		appState.setPartners();
 
-		ArrayList<PartnerModel> p = appState.getPartners();
-		int length = p.size();
+		int length = appState.partners.size();
 		for (int i = 0; i < length; i++) {
-			String s = "" + i + " - ";
-			if (p.get(i).company.length() == 0) {
-				s += p.get(i).name + " " + p.get(i).surname;
+			String s = "" + (i + 1) + " - ";
+			if (appState.partners.get(i).company.length() == 0) {
+				s += appState.partners.get(i).name + " "
+						+ appState.partners.get(i).surname;
 			} else {
-				s += p.get(i).company;
+				s += appState.partners.get(i).company;
 			}
 			partners.add(s);
 		}

@@ -18,6 +18,7 @@ package com.jpa;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.widget.TextView;
 
 public class CreditsActivity extends Activity {
@@ -29,6 +30,20 @@ public class CreditsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.credits);
 
-		tCredits = (TextView) findViewById(R.id.credits_hello);
+		TextView tv_jpa_description = (TextView) findViewById(R.id.credits_jpa_description);
+		tv_jpa_description.setText(this
+				.getString(R.string.credits_jpa_description));
+
+		TextView tv_jpa_url = (TextView) findViewById(R.id.credits_jpa_url);
+		tv_jpa_url.setAutoLinkMask(Linkify.WEB_URLS);
+		tv_jpa_url.setText(this.getString(R.string.credits_jpa_url));
+
+		TextView tv_jpa_copyright = (TextView) findViewById(R.id.credits_jpa_copyright);
+		tv_jpa_copyright
+				.setText(this.getString(R.string.credits_jpa_copyright));
+
+		TextView tv_carlo_url = (TextView) findViewById(R.id.credits_carlo_url);
+		tv_carlo_url.setAutoLinkMask(Linkify.WEB_URLS);
+		tv_carlo_url.setText(this.getString(R.string.credits_carlo_url));
 	}
 }

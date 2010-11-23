@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent" android:background="#ffffff">
 	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-		android:id="@+id/credits_hello" android:layout_width="fill_parent"
-		android:layout_height="fill_parent" android:text="@string/credits_hello" />
+		android:id="@+id/credits_jpa_description" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/credits_jpa_description"
+		android:textColor="#000000" />
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/credits_jpa_url" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/credits_jpa_url" />
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/credits_jpa_copyright" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/credits_jpa_copyright"
+		android:textColor="#000000" />
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/credits_carlo_url" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/credits_carlo_url" />
 </LinearLayout>

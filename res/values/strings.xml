@@ -7,13 +7,11 @@
 
 	<string name="btnBack">Back</string>
 
-	<string name="credits_hello">Credits (TODO).</string>
-
-	<!--
-		public String email; public String url; public String phone; public
-		String latitude; public String longitude;
-	-->
-
+	<string name="credits_jpa_description">JPA (JSON Partners Agenda)</string>
+	<string name="credits_jpa_copyright">Copyright 2010 by Carlo Perassi</string>
+	<string name="credits_jpa_url">https://github.com/carlok/JPA</string>
+	<string name="credits_carlo_url">http://perassi.org/</string>
+	
 	<string name="partner_name">%s (partner since %s)</string>
 	<string name="partner_percentage">Paid in: %s € (%s shares) %s%%</string>
 	<string name="partner_phone">%s</string>
