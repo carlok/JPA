@@ -73,7 +73,7 @@ public class PartnerActivity extends MapActivity {
 				name, appState.partners.get(pid).from));
 
 		double paid_in = Double.parseDouble(appState.partners.get(pid).paid_in);
-		DecimalFormat mf = new DecimalFormat("###.###.###");
+		DecimalFormat mf = new DecimalFormat("###,###,###");
 		TextView tv_percentage = (TextView) findViewById(R.id.partner_percentage);
 		tv_percentage.setText(String.format(this
 				.getString(R.string.partner_percentage), mf.format(paid_in),

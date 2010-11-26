@@ -27,6 +27,7 @@ import android.util.Log;
 public class JPAApplication extends Application {
 	MyHttpClient mhc = new MyHttpClient();
 	public ArrayList<PartnerModel> partners = new ArrayList<PartnerModel>();
+	public ArrayList<String> partnersS = new ArrayList<String>();
 	public int pid = 0;
 
 	public ArrayList<PartnerModel> getPartners() {

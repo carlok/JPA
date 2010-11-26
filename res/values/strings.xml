@@ -5,19 +5,24 @@
 	<string name="btnCredits">Credits</string>
 	<string name="btnSettings">Settings</string>
 
-	<string name="btnBack">Back</string>
-
+	<!-- CreditsActivity -->
 	<string name="credits_jpa_description">JPA (JSON Partners Agenda)</string>
 	<string name="credits_jpa_copyright">Copyright 2010 by Carlo Perassi</string>
 	<string name="credits_jpa_url">https://github.com/carlok/JPA</string>
 	<string name="credits_carlo_url">http://perassi.org/</string>
-	
+
+	<!-- FindActivity -->
+	<string name="btnJSON">Get JSON data</string>
+
+	<!-- PartnerActivity -->
+	<string name="btnBack">Back</string>
 	<string name="partner_name">%s (partner since %s)</string>
 	<string name="partner_percentage">Paid in: %s € (%s shares) %s%%</string>
 	<string name="partner_phone">%s</string>
 	<string name="partner_email">%s</string>
 	<string name="partner_url">%s</string>
 
+	<!-- SettingsActivity -->
 	<string name="settings_hello">Settings (TODO).</string>
 
 	<string name="tab_name_credits">Credits</string>
