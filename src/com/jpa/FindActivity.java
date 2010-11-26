@@ -33,6 +33,7 @@ import android.widget.AdapterView.OnItemClickListener;
 /*
  * TODO: l'annoso problema del filtro su di un ArrayAdapter opportuno
  * TODO: http://static.springsource.org/spring-android/docs/1.0.x/reference/htmlsingle/
+ * TODO: fix errori (nel solo log) per PartnerActivity
  */
 public class FindActivity extends ListActivity {
 	ListView lv;
@@ -44,10 +45,12 @@ public class FindActivity extends ListActivity {
 		setContentView(R.layout.find);
 		final JPAApplication appState = ((JPAApplication) getApplicationContext());
 
-		Button btnJSON = (Button) findViewById(R.id.btnJSON);
+		final Button btnJSON = (Button) findViewById(R.id.btnJSON);
 		btnJSON.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
-				new AddStringTask().execute();
+				if (appState.partners.size() == 0) {
+					new AddStringTask().execute();
+				}
 			}
 		});
 
@@ -93,7 +96,7 @@ public class FindActivity extends ListActivity {
 
 			for (String item : items) {
 				publishProgress(item);
-//				SystemClock.sleep(1);
+				// SystemClock.sleep(1);
 			}
 
 			return (null);
