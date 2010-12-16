@@ -7,8 +7,8 @@
 
 	<!-- CreditsActivity -->
 	<string name="credits_jpa_description">JPA (JSON Partners Agenda)</string>
-	<string name="credits_jpa_copyright">Copyright 2010 by Carlo Perassi</string>
-	<string name="credits_jpa_url">https://github.com/carlok/JPA</string>
+	<string name="credits_jpa_copyright">\nCopyright © 2010 by Carlo Perassi</string>
+	<string name="credits_jpa_url">https://github.com/carlok/jpa</string>
 	<string name="credits_carlo_url">http://perassi.org/</string>
 
 	<!-- FindActivity -->

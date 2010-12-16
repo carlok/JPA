@@ -36,7 +36,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * TODO: l'annoso problema del filtro su di un ArrayAdapter opportuno
  * TODO: http://static.springsource.org/spring-android/docs/1.0.x/reference/htmlsingle/
  * TODO: fix errori (nel solo log) per PartnerActivity
- * TODO: aggiungere la search...
  */
 public class FindActivity extends ListActivity {
 	ListView lv;
