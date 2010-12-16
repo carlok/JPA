@@ -19,10 +19,12 @@ package com.jpa;
 import java.util.ArrayList;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -34,6 +36,7 @@ import android.widget.AdapterView.OnItemClickListener;
  * TODO: l'annoso problema del filtro su di un ArrayAdapter opportuno
  * TODO: http://static.springsource.org/spring-android/docs/1.0.x/reference/htmlsingle/
  * TODO: fix errori (nel solo log) per PartnerActivity
+ * TODO: aggiungere la search...
  */
 public class FindActivity extends ListActivity {
 	ListView lv;
@@ -45,7 +48,9 @@ public class FindActivity extends ListActivity {
 		setContentView(R.layout.find);
 		final JPAApplication appState = ((JPAApplication) getApplicationContext());
 
-		final Button btnJSON = (Button) findViewById(R.id.btnJSON);
+		appState.setDbAuth();
+
+		Button btnJSON = (Button) findViewById(R.id.btnJSON);
 		btnJSON.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 				if (appState.partners.size() == 0) {
@@ -53,7 +58,15 @@ public class FindActivity extends ListActivity {
 				}
 			}
 		});
-
+		Button btnKey = (Button) findViewById(R.id.btnKey);
+		btnKey.setOnClickListener(new Button.OnClickListener() {
+			public void onClick(View v) {
+				InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+				imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,
+						InputMethodManager.HIDE_IMPLICIT_ONLY ); 
+			}
+		});
+		
 		setListAdapter(new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, appState.partnersS));
 		ListView lv = getListView();
@@ -110,7 +123,7 @@ public class FindActivity extends ListActivity {
 
 		@Override
 		protected void onPostExecute(Void unused) {
-			Toast.makeText(FindActivity.this, "Done!", Toast.LENGTH_SHORT)
+			Toast.makeText(FindActivity.this, getString(R.string.tstList), Toast.LENGTH_SHORT)
 					.show();
 		}
 	}

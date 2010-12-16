@@ -13,19 +13,31 @@
 
 	<!-- FindActivity -->
 	<string name="btnJSON">Get JSON data</string>
+	<string name="btnKey">Keyboard</string>
+	<string name="search_hint">Write a Name or Surname</string>
+	<string name="tstList">Done</string>
+
+	<!-- JPAApplication -->
+	<string name="jpa_default_url">http://perassi.org/quickhacks/json_jpa/index.php
+	</string>
+	<string name="jpa_default_password">aaa</string>
 
 	<!-- PartnerActivity -->
 	<string name="btnBack">Back</string>
-	<string name="partner_name">%s (partner since %s)</string>
-	<string name="partner_percentage">Paid in: %s € (%s shares) %s%%</string>
+	<string name="partner_name">%1$s (partner since %2$s)</string>
+	<string name="partner_percentage">Paid in: %1$s € (%2$s shares) %3$s%%</string>
 	<string name="partner_phone">%s</string>
 	<string name="partner_email">%s</string>
 	<string name="partner_url">%s</string>
 
 	<!-- SettingsActivity -->
-	<string name="settings_hello">Settings (TODO).</string>
+	<string name="btnSave">Save</string>
+	<string name="settings_password">Password:</string>
+	<string name="settings_url">URL:</string>
 
 	<string name="tab_name_credits">Credits</string>
 	<string name="tab_name_find">Find</string>
 	<string name="tab_name_settings">Settings</string>
+
+	<string name="tstSave">Saved</string>
 </resources>

@@ -22,6 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.Application;
+import android.database.Cursor;
 import android.util.Log;
 
 public class JPAApplication extends Application {
@@ -34,13 +35,45 @@ public class JPAApplication extends Application {
 		return partners;
 	}
 
+	public ArrayList<String> getDbAuth() {
+		DbModel db = new DbModel(getApplicationContext());
+		ArrayList<String> s = new ArrayList<String>();
+		db.open();
+
+		Cursor c = db.getDbAuth();
+
+		int urlCol = c.getColumnIndex(DbModel.MetaData.JPA_URL_KEY);
+		int passwordCol = c.getColumnIndex(DbModel.MetaData.JPA_PASSWORD_KEY);
+		c.moveToFirst();
+		s.add(c.getString(urlCol));
+		s.add(c.getString(passwordCol));
+
+		db.close();
+
+		return s;
+	}
+
+	public void setDbAuth() {
+		DbModel db = new DbModel(getApplicationContext());
+		db.open();
+
+		Cursor c = db.fetch();
+
+		if (c.moveToFirst() == false) {
+			db.insert(this.getString(R.string.jpa_default_url), this
+					.getString(R.string.jpa_default_password));
+		}
+
+		db.close();
+	}
+
 	public void setPartners() {
 		try {
 			partners.clear();
-			JSONArray entries = new JSONArray(
-					mhc
-							.getContent("http://perassi.org/quickhacks/json_jpa/"));
 
+			ArrayList<String> s = this.getDbAuth();
+			JSONArray entries = new JSONArray(mhc.getContent(s.get(0) + "?p="
+					+ s.get(1)));
 			for (int i = 0; i < entries.length(); i++) {
 				JSONObject post = entries.getJSONObject(i);
 				partners.add(new PartnerModel(post.getString("company"), post
