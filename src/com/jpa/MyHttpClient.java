@@ -30,6 +30,8 @@ import org.apache.http.util.EntityUtils;
 import android.util.Log;
 
 public class MyHttpClient {
+	private static final String TAG = "MyHttpClient";
+
 	public String getContent(String url) {
 		String out = "";
 		HttpClient httpclient = new DefaultHttpClient();
@@ -39,11 +41,9 @@ public class MyHttpClient {
 		try {
 			response = httpclient.execute(httpget);
 		} catch (ClientProtocolException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			Log.e(TAG, "HTTP request failed", e1);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			Log.e(TAG, "HTTP request failed", e1);
 		}
 
 		HttpEntity entity = response.getEntity();
@@ -52,11 +52,9 @@ public class MyHttpClient {
 				out = EntityUtils.toString(entity);
 				Log.d("INFO", out);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Log.e(TAG, "Failed to parse HTTP response", e);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Log.e(TAG, "Failed to read HTTP response", e);
 			}
 		}
 
